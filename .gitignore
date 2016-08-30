@@ -1,4 +1,5 @@
 node_modules
 public
+cached_data
 npm-debug.log
 .env

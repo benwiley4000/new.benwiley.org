@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 
 var webpackConfig = {
-  entry: './src/js/index.js',
+  entry: './src/js/client.js',
   resolve: {
     extensions: ['', '.js']
   },
