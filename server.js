@@ -44,8 +44,8 @@ app.get('/github-merged-requests', (req, res) => {
     }).then(pullRequests => {
       fs.mkdir(cachedDataDir, () => {
         fs.writeFile(filepath, JSON.stringify({
-          pullRequests,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
+          pullRequests
         }, null, 2));
       });
 
