@@ -1,7 +1,8 @@
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 
 var webpackConfig = {
-  entry: './src/js/client.js',
+  entry: __dirname + '/src/js/client.js',
   resolve: {
     extensions: ['', '.js']
   },
@@ -9,6 +10,7 @@ var webpackConfig = {
     path: __dirname + '/public/js',
     filename: 'index.js'
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -18,8 +20,19 @@ var webpackConfig = {
         query: {
           presets: ['es2015', 'stage-0']
         }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css!postcss'
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css?sourceMap!postcss!sass?sourceMap'
       }
     ]
+  },
+  postcss: function () {
+    return [autoprefixer('> 1%')];
   }
 };
 

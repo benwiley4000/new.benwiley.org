@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+require('../scss/bootstrap_custom.scss');
+
 const appDiv = document.getElementById('app');
 
 axios.get('/github-merged-requests')
@@ -9,14 +11,14 @@ axios.get('/github-merged-requests')
 
     appDiv.innerHTML = '';
 
-    const header = document.createElement('h1');
+    const header = document.createElement('h2');
     header.innerText = 'BenWiley4000\'s Merged Pull Requests';
     appDiv.appendChild(header);
 
     pullRequests.forEach(pullRequest => {
       const div = document.createElement('div');
 
-      const head = document.createElement('h2');
+      const head = document.createElement('h3');
       head.innerText = pullRequest.base.repo.name;
       div.appendChild(head);
 

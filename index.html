@@ -9,9 +9,31 @@
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="Ben Wiley">
+  <link href="https://fonts.googleapis.com/css?family=Allan&text=Ben+Wiley" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+    .display-1,
+    .display-2,
+    .display-3,
+    .display-4 {
+      font-family: Allan !important;
+    }
+  </style>
 </head>
 <body>
-  <div id="app"></div>
+  <div class="container">
+    <h1 id="name_logo" class="display-1">Ben Wiley</h1>
+    <div id="app"></div>
+  </div>
+
   <script src="js/index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Esteban', 'Open Sans']
+      }
+    });
+  </script>
 </body>
 </html>
